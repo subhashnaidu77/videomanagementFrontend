@@ -10,6 +10,8 @@ import { Video } from "./pages/Video";
 import { SignIn } from "./pages/SignIn";
 import Search from "./pages/Search";
 import { ProfilePage } from "./components/ProfilePage";
+import React from 'react';
+
 const Container = styled.div`
 display: flex;
 `;
