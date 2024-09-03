@@ -10,7 +10,7 @@ export const Recommendation = ({tags}) => {
   const [videos, setVideos] = useState([]);
   useEffect(() => {
     const fetchVideos = async () => {
-      const res = await axios.get(`/videos/tags?tags=${tags}`);
+      const res = await axios.get(`https://videoback-7csk.onrender.com/api/videos/tags?tags=${tags}`);
       setVideos(res.data);
     };
     fetchVideos();
