@@ -44,7 +44,7 @@ export const Comments = ({videoId}) => {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const res = await axios.get(`/comments/${videoId}`);
+        const res = await axios.get(`https://videoback-7csk.onrender.com/api/comments/${videoId}`);
         setComments(res.data);
       } catch (err) {}
     };
@@ -57,7 +57,7 @@ export const Comments = ({videoId}) => {
     if (newComment.trim()) {
       try {
         console.log("Sending comment:", newComment); 
-        const res = await axios.post(`/comments`, {
+        const res = await axios.post(`https://videoback-7csk.onrender.com/api/comments`, {
           videoId,
           userId: currentUser._id,
           desc: newComment,
