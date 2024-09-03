@@ -80,7 +80,7 @@ export const SignIn = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("/auth/signin", { name, password });
+      const res = await axios.post("https://videoback-7csk.onrender.com/api/auth/signin", { name, password });
       dispatch(loginSuccess(res.data));
       navigate("/")
     } catch (err) {
@@ -94,7 +94,7 @@ const signInWithGoogle =  async()=>{
   signInWithPopup(auth, provider)
     .then((result) => {
       axios
-        .post("/auth/google", {
+        .post("https://videoback-7csk.onrender.com/api/auth/google", {
           name: result.user.displayName,
           email: result.user.email,
           img: result.user.photoURL,
@@ -114,7 +114,7 @@ const handleSignup = async (e) => {
   e.preventDefault();
   dispatch(loginStart());
   try {
-    const res = await axios.post("/auth/signup", { name, email, password });
+    const res = await axios.post("https://videoback-7csk.onrender.com/api/auth/signup", { name, email, password });
     dispatch(loginSuccess(res.data));
     navigate("/");
   } catch (err) {
