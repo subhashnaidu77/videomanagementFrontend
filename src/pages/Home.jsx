@@ -15,7 +15,7 @@ export const Home = ({ type }) => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const res = await axios.get(`/videos/${type}`);
+        const res = await axios.get(`https://videoback-7csk.onrender.com/api/videos/${type}`);
         console.log(res.data); // Log the API response to inspect the structure
         // Ensure that the response is an array before setting it to state
         setVideos(Array.isArray(res.data) ? res.data : []);
