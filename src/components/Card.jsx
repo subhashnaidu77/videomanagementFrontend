@@ -60,7 +60,7 @@ const Card = ({type, video}) => {
 
 useEffect(()=>{
   const fetchChannel = async () => {
-    if (video && video.userId) {   const res = await axios.get(`/users/find/${video.userId}`);
+    if (video && video.userId) {   const res = await axios.get(`https://videoback-7csk.onrender.com/api/users/find/${video.userId}`);
     setChannel(res.data)
   } }
   fetchChannel()
