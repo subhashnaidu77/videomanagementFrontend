@@ -74,7 +74,7 @@ export const ProfilePage = () => {
   useEffect(() => {
     const fetchUserVideos = async () => {
       try {
-        const response = await axios.get(`/videos/user-videos/${currentUser._id}`);
+        const response = await axios.get(`https://videoback-7csk.onrender.com/api/videos/user-videos/${currentUser._id}`);
         setUserVideos(response.data || []); 
       } catch (error) {
         console.error('Error fetching user videos:', error);
@@ -89,7 +89,7 @@ export const ProfilePage = () => {
 
   const handleDelete = async (videoId) => {
     try {
-      await axios.delete(`/videos/delete/${videoId}`);
+      await axios.delete(`https://videoback-7csk.onrender.com/api/videos/delete/${videoId}`);
       dispatch(deleteVideo(videoId)); 
  
     } catch (error) {
@@ -100,7 +100,7 @@ export const ProfilePage = () => {
     setEditingVideo(video);
     setTitle(video.title);
     setDescription(video.desc);
-    // setStatus(video.status || '');
+    
 
   };
 
@@ -108,10 +108,10 @@ export const ProfilePage = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.put(`/videos/edit/${editingVideo._id}`, {
+      const response = await axios.put(`https://videoback-7csk.onrender.com/api/videos/edit/${editingVideo._id}`, {
         title,
         desc,
-        // status,
+      
         userId: currentUser._id,
       });
 
