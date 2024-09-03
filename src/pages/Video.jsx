@@ -159,7 +159,7 @@ export const Video = () => {
 
   const handleDelete = async (videoId) => {
     try {
-      await axios.delete(`videos/find/${videoId}`);
+      await axios.delete(`https://videoback-7csk.onrender.com/apivideos/find/${videoId}`);
       navigate("/");
     } catch (err) {
       console.error(err);
