@@ -137,7 +137,7 @@ const Upload = ({ setOpen }) => {
     e.preventDefault();
     const res = await axios.post("https://videoback-7csk.onrender.com/api/videos", {...inputs, tags})
     setOpen(false)
-    res.status===200 && navigate(`/video/${res.data._id}`)
+    res.status===200 && navigate(`https://videoback-7csk.onrender.com/api/video/${res.data._id}`)
   }
 
   return (
