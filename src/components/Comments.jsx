@@ -44,7 +44,7 @@ export const Comments = ({videoId}) => {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const res = await axios.get(`https://videoback-7csk.onrender.com/api/comments/${videoId}`);
+        const res = await axios.get(`/api/comments/${videoId}`);
         setComments(res.data);
       } catch (err) {}
     };
