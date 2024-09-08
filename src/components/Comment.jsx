@@ -41,7 +41,7 @@ const Comment = ({ comment }) => {
   const [channel,setChannel] = useState({})
   useEffect(() => {
     const fetchComment = async () => {
-      const res = await axios.get(`https://videoback-7csk.onrender.com/api/users/find/${comment.userId}`);
+      const res = await axios.get(`/api/users/find/${comment.userId}`);
       setChannel(res.data)
     };
     fetchComment();
