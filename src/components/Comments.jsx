@@ -57,7 +57,7 @@ export const Comments = ({videoId}) => {
     if (newComment.trim()) {
       try {
         console.log("Sending comment:", newComment); 
-        const res = await axios.post(`https://videoback-7csk.onrender.com/api/comments`, {
+        const res = await axios.post(`/api/comments`, {
           videoId,
           userId: currentUser._id,
           desc: newComment,
