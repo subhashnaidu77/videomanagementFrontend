@@ -148,12 +148,18 @@ export const Video = () => {
     return <div>Loading...</div>; 
   }
   const handleLike = async () => {
-    await axios.put(`https://videoback-7csk.onrender.com/api/users/like/${currentVideo._id}`);
+    await axios.put(`https://videoback-7csk.onrender.com/api/users/like/${currentVideo._id}` ,{},{
+    withCredentials: true 
+});
     dispatch(like(currentUser._id));
+  
   };
   const handleDislike = async () => {
-    await axios.put(`https://videoback-7csk.onrender.com/api/users/dislike/${currentVideo._id}`);
+    await axios.put(`https://videoback-7csk.onrender.com/api/users/dislike/${currentVideo._id}`,{},{
+    withCredentials: true 
+});
     dispatch(dislike(currentUser._id));
+    
   };
 
 
